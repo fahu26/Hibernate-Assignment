@@ -9,8 +9,8 @@ public class PersonMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		PersonDao dao = new PersonDao();
-		Address address = new Address("Mannady", "Chennai", "TamilNadu", "600001");
-		Address address1 = new Address("Nehru Nagar", "Mumbai", "Maharashtra", "400024");
+		Address address = new Address("dvdv", "dvdvd", "dbsdb", "55454");
+		Address address1 = new Address("Nfsdbfsbf", "dbds", "bsdb", "scasc");
 		Person person = new Person();
 		person.getAddress().add(address);
 		person.getAddress().add(address1);

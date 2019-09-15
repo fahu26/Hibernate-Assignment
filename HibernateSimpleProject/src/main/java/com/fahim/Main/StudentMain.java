@@ -6,7 +6,7 @@ import com.fahim.model.Student;
 public class StudentMain {
 public static void main(String args[]) {
 	StudentDao dao = new StudentDao();
-	Student student = new Student(1, "Fahim", "9870638627", "Male", 25);
+	Student student = new Student(1, "dvdvd", "152154613", "Male", 25);
 	dao.saveStudent(student);
 System.out.println("Student added!!!");	
 
