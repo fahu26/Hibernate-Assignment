@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 @Entity
-public class Author extends Book {
+public class Author {
 //@Id 
 private int authorId;
 private String authorName;

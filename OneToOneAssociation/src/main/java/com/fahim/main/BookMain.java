@@ -36,10 +36,10 @@ public class BookMain {
 		book1.setBookTitle("nothing is just everything");
 		bookDao.saveOrUpdateData(book1);
 		System.out.println("detaikls--->"+bookDao.getData(book1));
-		System.out.println("detaikls--->"+bookDao.getData(author));
+		System.out.println("detaikls--->"+bookDao.getData(book));
 		bookDao.deleteData(book1);
 		System.out.println("After delete");
-		System.out.println(bookDao.getData(author1));
+		System.out.println(bookDao.getData(book));
 		System.out.println(bookDao.getData(book));
 		
 	}
