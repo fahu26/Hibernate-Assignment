@@ -1,18 +1,18 @@
 package com.fahim.dao;
 
-import java.util.List;
-
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
-import com.fahim.model.Customer;
+import com.fahim.model.Student;
 import com.fahim.util.HibernateUtil;
 
-public class CustomerDao {
-	org.hibernate.Transaction transactions = null;
-public void saveOrUpdateData(Customer customer) {
+public class StudentDao {
+
+public void saveOrUpdateData(Object obj) {
+	Transaction transactions = null;
 	try(Session session = HibernateUtil.getSessionFactory().openSession()) {
 	transactions=session.beginTransaction();
-	session.saveOrUpdate(customer);
+	session.saveOrUpdate(obj);
 	transactions.commit();
 	session.close();
 	} catch (Exception e) {
@@ -23,24 +23,24 @@ public void saveOrUpdateData(Customer customer) {
 	}
 }
 
-public List<Customer> getDetails(Customer customer){
+public Student getDetails(Student student){
 	try(Session session = HibernateUtil.getSessionFactory().openSession()){
-		return (List<Customer>) session.get(Customer.class, customer.getCustomerId());
+		return session.get(Student.class, student.getStudentId());
 	}
 }
 
 
-public void deleteData(Customer customer) {
+public void deleteData(Student student) {
+	Transaction transactions = null;
 	try(Session session = HibernateUtil.getSessionFactory().openSession()) {
 	transactions=session.beginTransaction();
-	session.delete(customer);
+	session.delete(student);
 	transactions.commit();
 	session.close();
 	} catch (Exception e) {
 		if(transactions != null)
 			transactions.rollback();
 		e.printStackTrace();
-		// TODO: handle exception
 	}
 }
 
