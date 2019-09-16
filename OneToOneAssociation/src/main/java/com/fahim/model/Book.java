@@ -2,10 +2,13 @@ package com.fahim.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.LazyCollection;
 
 
 @Entity
@@ -15,7 +18,7 @@ private long isbn;
 private String bookTitle;
 private double bookPrice;
 @JoinColumn(name = "author")
-@OneToOne(cascade = CascadeType.ALL)
+@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 private Author author;
 public long getIsbn() {
 	return isbn;

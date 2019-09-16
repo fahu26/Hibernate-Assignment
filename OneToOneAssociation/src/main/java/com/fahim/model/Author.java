@@ -2,6 +2,7 @@ package com.fahim.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -14,7 +15,7 @@ private String authorName;
 private long authorContact;
 private String authorEmail;
 @JoinColumn(name="book_id")
-@OneToOne(cascade =CascadeType.ALL)
+@OneToOne(cascade =CascadeType.ALL,fetch = FetchType.LAZY)
 private Book book;
 public Book getBook() {
 	return book;
